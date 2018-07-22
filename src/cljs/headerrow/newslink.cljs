@@ -1,16 +1,27 @@
-(ns notwapo.newslink
-  (:require [reagent.core :as r]))
+(ns notwapo.newslink)
 
 
-(defn button-news-link []
-  [:div.news-button "HeaderRowComponent"])
-  
-(defn li-news-link []
-  [:li.news-link-li "HeaderRowComponent"])
-  
-  
+(defn button-news-link [data]
+  (print data);
+  (let [title    (:title data)
+        callback (:callback data)]
+      [:div.news-button title]))
 
-(defn ul-news-link [links]
-  [:ul.news-link-ul
-    ; (map #([li-news-link]) links)
-    ])
+(defn li-news-link [linkobject]
+  (let [title (:title linkobject)
+        link  (:link linkobject)]
+  [:li.news-link-li
+    [:a {:href link :key title} (str title)]]))
+
+(defn ul-news-links
+  ([links]
+    [:ul.news-link-ul
+      (for [link links]
+        ^{:key link} [li-news-link link])])
+  ([links buttons]
+    (print buttons);
+    [:ul.news-link-ul
+      (for [btn buttons]
+        ^{:key btn} [button-news-link btn])
+      (for [link links]
+        ^{:key link} [li-news-link link])]))

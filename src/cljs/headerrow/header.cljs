@@ -3,7 +3,7 @@
             [reagent.core :as r]))
 
 
-(def headerlinks ( list {:title "Politics" :link "#politics"}
+(def headerlinks (list {:title "Politics" :link "#politics"}
                         {:title "Opinions" :link "#opinions"}
                         {:title "Sports" :link "#sports"}
                         {:title "Local" :link "#local"}
@@ -12,10 +12,12 @@
                         {:title "Business" :link "#business"}
                         {:title "Tech" :link "#tech"}
                         {:title "Lifestyle" :link "#lifestyle"} ))
-(def alarmlink (list {:title "&#128276;" :link "#"}))
+(def headerbuttons (list {:title "Search" :callback nil}
+                         {:title "Sections \u2630" :callback nil}))
+
+(def alarmlink (list {:title "\u237E" :link "#"}))
 
 (defn header []
-  (print (:title (first headerlinks)))
-  [:div#header-row 
-    [newslink/ul-news-link headerlinks]
-    [newslink/ul-news-link alarmlink]])
+  [:div#header-row
+    [newslink/ul-news-links headerlinks headerbuttons]
+    [newslink/ul-news-links alarmlink nil]])
