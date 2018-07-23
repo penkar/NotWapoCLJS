@@ -216,6 +216,8 @@ hr.thin-divider {
     min-height: 1rem; }
     .table-of-contents-component .content-component > .label, .table-of-contents-component .content-component .right-arrow {
       font-size: 14px; }
+    .table-of-contents-component .content-component .right-arrow {
+      transform: rotate(225deg);}
     .table-of-contents-component .content-component > .subcontents-component {
       display: none;
       flex-direction: column; }
