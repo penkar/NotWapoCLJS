@@ -2,7 +2,6 @@
 
 
 (defn button-news-link [data]
-  (print data);
   (let [title    (:title data)
         callback (:callback data)]
       [:div.news-button title]))
@@ -19,7 +18,6 @@
       (for [link links]
         ^{:key link} [li-news-link link])])
   ([links buttons]
-    (print buttons);
     [:ul.news-link-ul
       (for [btn buttons]
         ^{:key btn} [button-news-link btn])

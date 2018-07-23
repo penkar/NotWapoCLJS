@@ -2,7 +2,6 @@
   (:require [notwapo.newslink :as newslink]
             [reagent.core :as r]))
 
-
 (def headerlinks (list {:title "Politics" :link "#politics"}
                         {:title "Opinions" :link "#opinions"}
                         {:title "Sports" :link "#sports"}

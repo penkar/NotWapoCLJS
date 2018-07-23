@@ -1,7 +1,8 @@
 (ns notwapo.application
-    (:require [notwapo.header :as h]))
+    (:require [notwapo.header :as h]
+              [notwapo.tableofcontents :as toc]))
 
 (defn application []
-  (print "hello");
   [:span
-    [h/header]])
+    [h/header]
+    [toc/tableofcontents]])
