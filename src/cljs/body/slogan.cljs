@@ -1,7 +1,7 @@
 (ns notwapo.slogan)
 
 (defn main []
-  (let [date (.toDateString (js/Date. )) ]
+  (let [date (.toDateString (js/Date. ))]
     [:div.slogan-sectional
       [:a.slogan-text {:href "#"} "Not the Washington Post"]
       [:div.slogan-row-text

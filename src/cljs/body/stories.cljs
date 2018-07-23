@@ -1,7 +1,6 @@
 (ns notwapo.stories)
-;;(.toDateString (js/Date. ))
-(def articles (list 
-  {
+
+(def articles (list {
     :id "0001"
     :date (.toDateString (js/Date. ))
     :section "politics"
@@ -64,13 +63,7 @@
       :sClass ""
     } {
       :type "list"
-      :array (list 
-        "item 1"
-        "item 2"
-        "item 3"
-        "item 4"
-        "item 5"
-      )
+      :array (list "item 1" "item 2" "item 3" "item 4" "item 5")
     } {
       :text "Nullam quis felis vitae eros ultricies vestibulum vel ut dui. Praesent dui tortor, tempor at sagittis at, mollis id ante. Nunc non placerat sapien. Maecenas ut augue convallis, blandit massa et, sodales eros. Aenean sit amet imperdiet sapien. Etiam condimentum, justo at ornare interdum, sem lorem sagittis turpis, ac facilisis justo lorem a ligula. Nullam cursus dui ut sem posuere aliquet. Sed eu tristique erat."
       :style nil
