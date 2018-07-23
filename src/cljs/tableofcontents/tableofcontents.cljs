@@ -14,13 +14,21 @@
         sublinks (:sublinks data)]
     [:div.content-component
       [:span.label label]
-      [:span.right-arrow (when (first sublinks) ">")]
+      [:span.right-arrow (when (first sublinks) "\u221F")]
       (when (first sublinks)
         [:div.subcontents-component.thin-shadow
           (for [sublink sublinks]
             ^{:key sublink} [sublink-content-component sublink])])]))
 
-(defn tableofcontents []
-  [:div#TableOfContents.table-of-contents-component.open
-    (for [content c/contentlinks]
-      ^{:key content} [content-component content])])
+(defn tableofcontents [props]
+  (let [open (when (:open props) "open")]
+    [:div#TableOfContents.table-of-contents-component {:class open}
+      [:div.generic-button-component.content-component-button.primary "Subscribe"]
+      [:hr.divider]
+      [:div.multicontent-component.content-component
+        [:a.primary {:href "home"} "Home Page"]
+        [:a.secondary {:href "usandworld"} "US & World"]
+        [:a.secondary {:href "regional"} "Regional"]]
+      (for [content c/contentlinks]
+        ^{:key content} [content-component content])
+      [:hr.divider]]))
