@@ -7,10 +7,10 @@
 (defonce open (atom false))
 (defn openchange []
   (swap! open not))
-  
+
 (defn application []
   (let [props {:open @open :openchange openchange}]
     [:span
-      [h/header props]
-      [toc/tableofcontents props]
+      [h/main props]
+      [toc/main props]
       [body/main props]]))

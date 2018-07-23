@@ -14,7 +14,7 @@
 
 (def alarmlink (list {:title "\u237E" :link "#"}))
 
-(defn header [props]
+(defn main [props]
   [:div#header-row
     [newslink/left-ul-news-links headerlinks props]
     [newslink/right-ul-news-links alarmlink]])

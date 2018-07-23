@@ -20,7 +20,7 @@
           (for [sublink sublinks]
             ^{:key sublink} [sublink-content-component sublink])])]))
 
-(defn tableofcontents [props]
+(defn main [props]
   (let [open (when (:open props) "open")]
     [:div#TableOfContents.table-of-contents-component {:class open}
       [:div.generic-button-component.content-component-button.primary "Subscribe"]
