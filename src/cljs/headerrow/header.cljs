@@ -12,9 +12,9 @@
                        {:title "Tech" :link "#tech"}
                        {:title "Lifestyle" :link "#lifestyle"} ))
 
-(def alarmlink (list {:title "\u237E" :link "#"}))
+(def alarmlink (list {:title "\u237E" :link ""}))
 
 (defn main [props]
   [:div#header-row
     [newslink/left-ul-news-links headerlinks props]
-    [newslink/right-ul-news-links alarmlink]])
+    [newslink/right-ul-news-links alarmlink props]])

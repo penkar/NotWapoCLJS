@@ -2,7 +2,7 @@
     (:require [reagent.core :as reagent :refer [atom]]
               [secretary.core :as secretary :include-macros true]
               [accountant.core :as accountant]
-              [notwapo.application :as application]))
+              [notwapo.application :as a]))
 
 ;; -------------------------
 ;; Views
@@ -33,7 +33,7 @@
 ;; Initialize app
 
 (defn mount-root []
-  (reagent/render [application/application] (.getElementById js/document "app")))
+  (reagent/render [a/Application] (.getElementById js/document "app")))
 
 (defn init! []
   (accountant/configure-navigation!
