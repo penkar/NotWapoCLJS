@@ -1,9 +1,13 @@
 (ns notwapo.homepage
   (:require [notwapo.stories :as stories]))
 
-(defn main [hash]
-  (print (:hash hash));
-  (if (empty? hash)
+(defn main-story [hash]
+  [:div.home-page-body
     [:div.story-teaser-component.main-article-component]
-    ;[:div.home-page-body]
-  ))
+    ])
+
+(defn main-stories [hash]
+  [:div.home-page-body
+    [:div.home-page-body-col]
+    [:div.home-page-body-col]
+    [:div.home-page-body-col]])

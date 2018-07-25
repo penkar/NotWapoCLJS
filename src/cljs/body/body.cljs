@@ -11,5 +11,6 @@
         hashchange      (:hashchange props)]
     [:div.app-body {:class tableofcontents}
       [slogan/main hashchange]
-      (when (empty? hash) [recent/main])
-      [homepage/main {:hash hash}]]))
+      (when (empty? hash)       [recent/main props])
+      (when (empty? hash)       [homepage/main-stories props])
+      (when (not (empty? hash)) [homepage/main-story props])]))
