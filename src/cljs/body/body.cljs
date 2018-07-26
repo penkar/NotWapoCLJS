@@ -8,9 +8,10 @@
         openchange      (:openchange props)
         tableofcontents (when open "tableofcontents")
         hash            (:hash props)
-        hashchange      (:hashchange props)]
+        hashchange      (:hashchange props)
+        num             (js/parseInt hash)]
     [:div.app-body {:class tableofcontents}
       [slogan/main hashchange]
-      (when (empty? hash)       [recent/main props])
-      (when (empty? hash)       [homepage/main-stories props])
-      (when (not (empty? hash)) [homepage/main-story props])]))
+      (when (not (int? num))       [recent/main props])
+      (when (not (int? num))       [homepage/main-stories props])
+      (when (int? num) [homepage/main-story props])]))

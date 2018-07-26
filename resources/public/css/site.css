@@ -95,8 +95,10 @@ hr.thin-divider {
     flex-direction: column; }
   .home-page-body .home-page-body-col + .home-page-body-col {
     border-left: 1px solid rgba(0, 0, 0, 0.33); }
-  .home-page-body .story-teaser-component + .story-teaser-component {
-    border-top: 1px solid rgba(0, 0, 0, 0.33); }
+  .home-page-body .story-teaser-component {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+    border-right: 0.5px solid rgba(0, 0, 0, 0.33);
+    border-left: 0.5px solid rgba(0, 0, 0, 0.33); }
   .home-page-body .story-teaser-component {
     text-align: left;
     padding: 1rem;
